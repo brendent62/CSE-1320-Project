@@ -59,8 +59,6 @@ This function reads workout data from the file and stores it back into the `work
 
 ---
 
-
-
 ## Menu Layout
 1. Record Workout
 2. View Workout History
@@ -73,8 +71,6 @@ This function reads workout data from the file and stores it back into the `work
 
 ---
 
-
-
 ## Detailed Example and Explanation
 
 Step 1: User selects option 1 (Record Workout)
@@ -82,9 +78,6 @@ Enter choice: 1
 Enter exercise: Bench
 Enter weight: 185
 Enter reps: 5
-
-
-
 
 
 Explanation:
@@ -103,17 +96,12 @@ Enter weight: 225
 Enter reps: 3
 
 
-
-
-
 Explanation:
 The program stores this in the next position:
 - `workouts[1]` now holds Squat data  
 - `count` is increased from 1 to 2  
 
 ---
-
-
 
 Step 3: User views workout history
 Enter choice: 2
@@ -127,15 +115,11 @@ It loops from index 0 to 1 (since count = 2) and prints each workout.
 
 ---
 
-
-
 Step 4: User checks personal records
 Enter choice: 3
 Bench PR: 185
 Squat PR: 225
 Deadlift PR: 0
-
-
 
 Explanation:
 The program calls `calculatePRs()`.  
@@ -144,9 +128,6 @@ The program calls `calculatePRs()`.
 - No Deadlift was entered, so it stays 0  
 
 ---
-
-
-
 
 Step 5: User plans a workout
 Enter choice: 4
@@ -160,11 +141,6 @@ It asks for a day number (0 = Monday)
 It stores "Chest" in weeklyPlan[0]
 If that day already had a workout, it gets replaced
 This only updates the weekly plan, not the workout history
-
-
-
-
-
 
 Step 6: User views weekly plan
 
@@ -182,16 +158,10 @@ The program calls viewWorkoutPlan().
 
 It loops through all 7 days
 
-
-
-
-
 Step 7: User saves data
 
 Enter choice: 6
 Data saved successfully.
-
-
 
 Explanation:
 The program calls saveData().
@@ -202,13 +172,8 @@ It writes each workout into the file
 This allows the data to be used later
 Step 8: User exits
 
-
-
-
 Enter choice: 8
 Exiting program...
-
-
 
 Explanation:
 The program ends the loop in main().
