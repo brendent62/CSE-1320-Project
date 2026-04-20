@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 typedef struct 
 {
     char workoutName[50];
@@ -16,15 +17,17 @@ void displaymenu(){
 void RecordWorkout(int *count,Workouts workout[]){
 
     printf("Enter Workout name ");
-    scanf("%s", workout[*count].workoutName);
+    scanf("%s", &workout[*count].workoutName);
     printf("Enter number of Reps ");
-    scanf("%s", workout[*count].reps);
+    scanf("%d", &workout[*count].reps);
     printf("Enter Weight ");
-    scanf("%s", workout[*count].weight);
+    scanf("%d", &workout[*count].weight);
     (*count)++;
 }
 void viewWorkoutHistory(int count, Workouts workout[]){
-    for int
+    for (int i = 0; i < count-1;i++){
+        printf("Workout name: %s\nNumber of reps: %d\nWeight: %d\n",workout[count].workoutName,workout[count].reps,workout[count].weight);
+    }
 }
 
 
@@ -33,9 +36,11 @@ void viewWorkoutHistory(int count, Workouts workout[]){
 int main() {
     int count=0;
     int *count1 = &count;
-    Workouts workout[2];
+    Workouts workout[100];
     RecordWorkout(count1,workout);
-    printf("%d\n%s", count,workout[0].workoutName);
-    displaymenu();
+    RecordWorkout(count1,workout);
+    RecordWorkout(count1,workout);
+    printf("%d\n", count);
+    viewWorkoutHistory(count-1,workout);
     return 0;
 }
