@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct 
+
+
+typedef struct //Holds each workout info
 {
     char workoutName[50];
     int weight;
@@ -9,11 +11,14 @@ typedef struct
 }Workouts;
 
 
-
+//Displays The menu so the user can then select what they would like to do
 void displaymenu(){
     printf("1. Record Workout\n2. View Workout History\n3. View Personal Records\n4. Plan Weekly Workout\n5. View Workout Plan\n6. Save Data\n7. Load Data\n8. Exit\n");
     printf("\n");
 }
+
+//Asks for user input then stores that info into a struct in a struct array at position count
+//count increments one each time ran so workouts are in order
 void RecordWorkout(int *count,Workouts workout[]){
 
     printf("Enter Workout name ");
@@ -24,6 +29,8 @@ void RecordWorkout(int *count,Workouts workout[]){
     scanf("%d", &workout[*count].weight);
     (*count)++;
 }
+
+//goes through our struct array and prints out each workout and its information
 void viewWorkoutHistory(int count, Workouts workout[]){
     for (int i = 0; i < count-1;i++){
         printf("Workout name: %s\nNumber of reps: %d\nWeight: %d\n",workout[count].workoutName,workout[count].reps,workout[count].weight);
