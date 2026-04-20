@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-typedef struct //Holds each workout info
+//Struct that holds each workout info
+typedef struct 
 {
     char workoutName[50];
     int weight;
@@ -32,12 +32,10 @@ void RecordWorkout(int *count,Workouts workout[]){
 
 //goes through our struct array and prints out each workout and its information
 void viewWorkoutHistory(int count, Workouts workout[]){
-    for (int i = 0; i < count-1;i++){
-        printf("Workout name: %s\nNumber of reps: %d\nWeight: %d\n",workout[count].workoutName,workout[count].reps,workout[count].weight);
+    for (int i = 0; i < count;i++){
+        printf("Workout name: %s\nNumber of reps: %d\nWeight: %d\n",workout[i].workoutName,workout[i].reps,workout[i].weight);
     }
 }
-
-
 
 
 int main() {
@@ -48,6 +46,6 @@ int main() {
     RecordWorkout(count1,workout);
     RecordWorkout(count1,workout);
     printf("%d\n", count);
-    viewWorkoutHistory(count-1,workout);
+    viewWorkoutHistory(count,workout);
     return 0;
 }
