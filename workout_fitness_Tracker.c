@@ -36,7 +36,7 @@ void viewWorkoutHistory(int count, Workouts workout[]){
 int main() {
     int count=0;
     int *count1 = &count;
-    Workouts workout[100];
+    Workouts *workout[100];
     RecordWorkout(count1,workout);
     RecordWorkout(count1,workout);
     RecordWorkout(count1,workout);
